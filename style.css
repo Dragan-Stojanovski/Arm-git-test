@@ -1,0 +1,786 @@
+:root{
+    --gold:#f3d053;
+    --black:black;
+    --white:white;
+    --fade-time: 0.5s;
+  }
+
+
+*{
+    text-decoration:none;
+    padding:0;
+    margin:0;
+    list-style:none;
+}
+body{
+    background-color:black;
+    line-height:22px;
+    text-decoration:none;
+    list-style:none;
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+img{
+  border:3px solid white;
+}
+
+/* NAVIGATION!!!!*/
+.wrapper{
+    width:100%;
+    height:90%vh;
+    background:var(--black);
+
+}
+
+.banner{
+    width:100%;
+    position:absolute;
+    top:35%;
+
+}
+.banner-text{
+    text-align:center;
+    font-size:2rem;
+    color:white;
+    text-transform:uppercase;
+    letter-spacing:2rem;
+    text-shadow:00.2rem 0.5rem #888;
+}
+
+.nav-list{
+    display:flex;
+    justify-content:center;
+
+}
+
+.nav-item{
+    margin-top:2rem;
+    text-align:center;
+    width:16vw;
+    padding:10px;
+    
+    
+}
+.nav-item:hover{
+    background-color:#ffcb03;
+}
+.nav-link{
+    font-size:1.2rem;
+    font-weight:600;
+    text-transform:uppercase;
+    color:var(--white);
+    letter-spacing:0.2rem;
+    text-shadow:0 0.2rem 0.5rem #b8b8b8;
+    
+}
+
+.dropdown{
+    margin-top:1rem;
+    background-color:var(--black);
+    position:relative;
+    z-index:100;
+opacity:0;
+visibility:hidden;
+height:0;
+transform:translateX(10%);
+transition:all 0.1s;
+}
+.nav-item:hover .dropdown{
+    opacity:1;
+    visibility:visible;
+    height:auto;
+   transform:translateX(0);
+   transition:all 0.1s 0.2s;
+   position: absolute;
+    display: block;
+  
+
+}
+.dropdown-item{
+    text-align:left;
+    padding:2rem 2rem 0rem 2rem;
+    
+
+}
+.dropdown-item:last-child{
+padding-bottom:2rem;
+}
+.dropdown-link{
+    font-size:1.1rem;
+    font-weight:bold;
+    text-transform:uppercase;
+    color:var(--white);
+}
+
+.dropdown p{
+    font-size:1rem;
+    color:var(--white);
+}
+.dropdown-bg{
+    
+    background-color:rgba(243,243,243,0.93);
+    border-radius:0.3rem;
+    box-shadow:0.5rem 1rem #bfbfbf;
+    position:absolute;
+    opacity:0;
+    visibility:hidden;
+    transition:all 0.3s;
+}
+
+.dropdown-bg::before{
+    content:"";
+    position:absolute;
+    border-left:1rem solid transparent;
+    border-right:1rem solid transparent;
+    border-bottom:1rem solid rgba(243,243,243,0.93);
+    top:0;
+    left:50%;
+    transform:translate(-50%,-100%);
+}
+
+/*Here ends navigation !!*/
+
+
+/* Starting Slider */
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    height: 80vh;
+    width: 100%;
+    margin:auto;
+  }
+  
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
+  
+  .slide.current {
+    opacity: 1;
+  }
+  
+  .slide .content {
+    position: absolute;
+    bottom: 70px;
+    left: -600px;
+    opacity: 0;
+    width: 600px;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 35px;
+  }
+  
+  .slide .content h1 {
+    margin-bottom: 10px;
+    color:var(--gold);
+  }
+  
+  .slide.current .content {
+    opacity: 1;
+    transform: translateX(600px);
+    transition: all 0.7s ease-in-out 0.3s;
+  }
+  
+  .buttons button#next {
+    position: absolute;
+    top: 40%;
+    right: 15px;
+  }
+  
+  .buttons button#prev {
+    position: absolute;
+    top: 40%;
+    left: 15px;
+
+  }
+  
+  .buttons button {
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    padding: 13px 15px;
+    border-radius: 50%;
+    outline: none;
+  }
+  
+  .buttons button:hover {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  @media (max-width: 500px) {
+    .slide .content {
+      bottom: -300px;
+      left: 0;
+      width: 100%;
+    }
+  
+    .slide.current .content {
+      transform: translateY(-300px);
+    }
+  }
+  
+  
+  
+  /* Backgorund Images */
+   
+  .slide:first-child {
+    background: url('images/diamond-cup2.jpg') no-repeat
+      center top/cover;
+  }
+  .slide:nth-child(2) {
+    background: url('https://www.sportsindiashow.com/wp-content/uploads/2020/06/John-Bzenk-and-Sly-over-the-top-1200x675.jpg') no-repeat
+      center top/cover;
+  }
+  .slide:nth-child(3) {
+    background: url('images/diamond-cup.jpg') no-repeat
+      center top/cover;
+  }
+  .slide:nth-child(4) {
+    background: url('https://effectiviology.com/wp-content/uploads/Arm-wrestling-break-arm-position-injury.jpg') no-repeat
+      center top/cover;
+  }
+  .slide:nth-child(5) {
+    background: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/screen-shot-2019-12-19-at-15-55-06-1576771012.png') no-repeat
+      center top/cover;
+  } 
+  .slide:nth-child(6)  {
+    background: url('images/galerija.jpg') no-repeat
+      center center/cover;
+  }
+
+  /*Here ends starting Slider*/
+/* MAIN WRAP*/
+.main-wrap{
+    width:80%;
+    margin:auto;
+}
+
+  /*ArmWrestling-mkd*/
+
+  .armwrestling-mkd h1{
+color:var(--gold);
+text-align:center;
+font-size:3rem;
+margin-top:50px;
+margin-bottom:70px;
+  }
+  .armwrestling-mkd p{
+      text-align:center;
+  }
+  p{
+      color:white;
+  }
+
+  /*Second Slider*/
+  .second-slide{
+      margin-top:100px;
+  }
+  .second-slide-1{
+      width:40%;
+      float:left;
+  }
+ .second-slide-2{
+     width:40%;
+     float:left;
+     margin-left:20%;
+     
+ }
+.second-slide-2 h3{
+    color:var(--gold);
+    font-size:2.2rem;
+    margin-top:50px;
+    margin-bottom:50px;
+}
+.second-slide-2 p{
+    margin-bottom:50px;
+}
+ /*Button Classic*/
+ .btn-classic{
+     padding:10px 70px;
+     background:transparent;
+     border:1px solid var(--gold);
+     color:white;
+     border-radius:10px;
+ } 
+ .btn-classic:hover{
+     background-color:var(--gold);
+     color:black;
+ }
+
+ 
+/*Rules style */
+
+ .armwrestling-rules{
+   
+   
+    width:400px;
+  margin:auto;
+  background-color:rgba(0, 0, 0, 0.428);
+   
+
+
+}
+.armwrestling-rules-img{
+    background-image:URL('images/rules.jpg');
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    margin-top:650px;
+    padding-top:100px;
+    padding-bottom:100px;
+}
+.armwrestling-rules h3{
+    color:var(--gold);
+}
+.armwrestling-rules li{
+    color:var(--white);
+list-style:circle;
+}
+
+/*Modul Style */
+.modul-div{
+    width:80%;
+    margin:auto;
+    text-align:center;
+    margin-top:100px;
+}
+.modul-main{
+    position:absolute;
+    width:60%;
+  
+}
+
+.modul-main h3{
+    color:var(--gold);
+    font-size:2.2rem;
+    margin-top:50px;
+    margin-bottom:50px;
+}
+.modul-main p{
+    margin-bottom:50px;
+}
+.modul-main a{
+    color:yellow;
+   
+}
+
+.modul-btn1{
+    width:20%;
+}
+
+
+.modul-btn2{
+    width:20%;
+}
+
+
+.modul-btn3{
+    width:20%;
+}
+
+.float-clear{
+    clear:both;
+    position:relative;
+}
+/* Footer Style */
+
+#footerh2{
+    font-size:3rem;
+    
+    text-align:center;
+    border-bottom:1px solid rgb(174, 174, 174);
+    padding:40px 0px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
+    color:var(--gold);
+    width:100%;
+    margin-top:0px;
+  
+  
+  }
+  .footerBox{
+     float:left;
+     font-size:1.5rem;
+     width:30%;
+     margin-left:19.5%;
+     line-height:24px;
+     color:rgb(174, 174, 174);
+  }
+  
+  .footerKontakt{
+     border-right:1px solid rgb(174, 174, 174);
+     margin-top:20px;
+     line-height:30px;
+  }
+  .footerSocial{
+     margin-top:20px;
+  }
+  .footer{
+     background-color:red;
+  }
+  .cookie{
+     text-align:center;
+     font-size:1.5rem;
+     padding-top:120px;
+     color:rgb(174, 174, 174);
+     padding-bottom:7%;
+  }
+  .footerWrap{
+     background-color:
+  rgb(41, 41, 41);
+  clear:both;
+  margin-top:400px;
+  
+  }
+  .footerBox h4{
+     color:white;
+  }
+  .ha111{
+     font-size:8rem;
+  }
+  
+
+
+/*History of Armwrestling */
+
+
+.main-history{
+    width:100%;
+  
+  
+  }
+  .main-history h2{
+    color:var(--gold);
+    margin-top:100px;
+    margin-bottom:100px;
+    font-size:2.5rem;
+    background-color:var(--gold);
+    color:var(--black);
+    padding:30px 0px;
+  }
+  
+  #footerh3{
+  font-size:3rem;
+    
+  text-align:center;
+  border-bottom:1px solid rgb(174, 174, 174);
+  padding:40px 0px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+  color:var(--gold);
+  width:100%;
+  margin-top:50px;
+  
+  
+  }
+  .legends-float{
+    float:left;
+    width:50%;
+    margin-top:100px;
+   
+  }
+  
+  #legends{
+    color:white;
+    
+  }
+  .legends h1{
+    color:var(--gold);
+    font-size:6rem;
+    line-height:7rem;
+    
+  }
+
+
+.footerWrap2{
+    margin-top:50px;
+}
+
+.float-clear{
+  clear:both;
+}
+/*Legends of ArmWrestling*/
+.legends-wrap{
+margin-top:150px;
+}
+.legends-img img{
+border:none;
+}
+.legends1{
+  width:20%;
+  float:left;
+  margin-left:10%;
+}
+.legends1 h2{
+  color:var(--gold);
+  margin-top:30px;
+  margin-bottom:30px;
+}
+.legends1 img{
+  border:none;
+  width:100%;
+  height:270px;
+  border-radius:50%;
+}
+.legends-wrap-2{
+  margin-top:100px;
+}
+.ha1{
+  font-size:2.2rem;
+  color:var(--black);
+  background-color:var(--gold);
+  padding:30px 0px;
+  padding-left:10%;
+  
+
+}
+.ha1-1{
+  margin-top:100px;
+}
+/*Torunaments Style */
+table{
+  width:80%;
+  height:200px;
+}
+.tournaments-mkd h3{
+  color:var(--gold);
+  font-size:2.2rem;
+  
+  margin-bottom:50px;
+}
+.tournaments-mkd{
+  float:left;
+  width:50%;
+  margin-top:50px;
+}
+.drzavno-tabela{
+  color:white;
+  margin-top:40px;
+
+}
+.international-tournaments h3{
+  color:var(--gold);
+  font-size:2rem;
+  margin-top:50px;
+  margin-bottom:50px;
+}
+.tournament-ol{
+  color:white;
+  margin-top:50px;
+}
+
+/*Tehniki na borenje na raka */
+
+.Tehniki h3{
+  color:var(--gold);
+  font-size:1.5rem;
+  margin-top:50px;
+  margin-bottom:10px;
+}
+
+.Tehniki ul{
+  color:white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media screen and (max-width:768px){
+    body{
+        background-color:black;
+        line-height:30px;
+        text-decoration:none;
+        list-style:none;
+        font-size:0.8rem;
+    
+    }
+.main-wrap{
+    width:95%;
+    margin:auto;
+}
+
+.hamburger{
+    color:white;
+    height:30px;
+    width:30px;
+}
+.buttons button#next {
+  
+    display:none;
+  }
+  
+  .buttons button#prev {
+    
+    display:none;
+
+  }
+  .armwrestling-mkd h1{
+      line-height:40px;
+  }
+
+  
+
+      .footerBox{
+        float:none;
+        font-size:1.1rem;
+        width:100%;
+        margin:auto;
+        line-height:30px;
+        color:rgb(174, 174, 174);
+        text-align:center;
+        
+     }
+      .footerKontakt{
+        border-right:none;
+        margin-top:20px;
+        font-size:1.2rem;
+     }
+     .footerSocial{
+        margin-top:20px;
+        border-top:1px solid white;
+        font-size:1.2rem;
+     }
+#second-slide-p{
+    height:150px;
+    overflow:hidden;
+}
+
+.nav-list{
+    display:block;
+    justify-content:center;
+
+
+}
+.nav-item{
+    margin-top:2rem;
+    text-align:center;
+    width:100%;
+    padding:10px;
+    
+    
+}
+
+.modul-div{
+    width:90%;
+    margin:auto;
+    text-align:center;
+    margin-top:100px;
+}
+.modul-main{
+    position:absolute;
+    width:90%;
+  
+}
+.footerWrap{
+    background-color:
+ rgb(41, 41, 41);
+ clear:both;
+ margin-top:500px;
+ 
+ }
+ .footerWrap2{
+     margin-top:50px;
+ }
+
+ .legends-float{
+    float:none;
+    width:100%;
+    margin-top:100px;
+    margin:auto;
+   
+  }
+  .legends h1{
+    color:var(--gold);
+    font-size:3rem;
+    line-height:7rem;
+    
+  }
+  .legends-img{
+      width:100%;
+      margin:auto;
+      text-align:center;
+  }
+
+   .second-slide{
+      margin-top:100px;
+  }
+  .second-slide-1{
+      width:40%;
+      float:left;
+      display:none;
+  }
+ .second-slide-2{
+     width:100%;
+     float:left;
+     margin-left:0%;
+     text-align:center;
+     margin:auto;
+     
+ }
+.legends{
+  text-align:center;
+}
+
+ /*Legends responsive*/
+ .legends1{
+  width:80%;
+  float:none;
+  margin-left:10%;
+  margin-top:50px;
+}
+.tournaments-mkd{
+  float:none;
+  width:100%;
+  margin-top:50px;
+  text-align:center;
+}
+table{
+  width:100%;
+  height:200px;
+}
+
+.armwrestling-rules{
+   
+   
+  width:100%;
+margin:auto;
+background-color:rgba(0, 0, 0, 0.428);
+ 
+
+
+}
+
+#footerh3{
+  font-size:1.6rem;
+}
+#footerh2{
+  font-size:1.6rem;
+}
+  }
